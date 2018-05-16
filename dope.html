@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+	<link rel="stylesheet" type="text/css" href="css/app.css"/>
+	<title>购物就去海淘-购物车</title>
+	<link href="favicon.ico" type="image/x-icon" rel="icon">
+	<link href="iTunesArtwork@2x.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+	<style>
+		a {
+			text-decoration: none;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			color: #646464;
+		}
+		.aui-list-cell {
+			padding: 10px 15px;
+			position: relative;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-box-align: center;
+			-webkit-align-items: center;
+			align-items: center;
+		}
+		.aui-list-cells a {
+			padding: 14px 15px 14px 4px;
+		}
+		.aui-list-cells .aui-list-cell-s {
+			padding: 15px;
+		}
+
+		.aui-list-cell:before {
+			content: " ";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			height: 1px;
+			border-bottom: 1px solid #D9D9D9;
+			color: #D9D9D9;
+			-webkit-transform-origin: 0 100%;
+			transform-origin: 0 100%;
+			-webkit-transform: scaleY(0.5);
+			transform: scaleY(0.5);
+		}
+		.aui-list-cell-fl {
+			width: 30px;
+			height: 30px;
+		}
+		.aui-list-cell-fl img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			border: none;
+		}
+		.aui-list-cell-cn {
+			-webkit-box-flex: 1;
+			-webkit-flex: 1;
+			flex: 1;
+			padding-left: 10px;
+			font-size: 12px;
+			color: #666;
+		}
+		.aui-list-cells .aui-list-cell-cn {
+			font-size: 14px;
+			color: #666;
+		}
+		.aui-list-cell-fr:after {
+			width: 18px;
+			height: 18px;
+			content: " ";
+			display: inline-block;
+			position: relative;
+			top: -8px;
+
+			top: 50%;
+			margin-top: -10px;
+			right: -5px;
+		}
+		.aui-list-cell-fr:after {
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAADPUlEQVR4Xu3d3XETMRAA4NXY51fSAVBBXILTgakAXAH45TSuwHN6cTogVAAdQAc4HYQKgFf/iVly9txk7EzGiVb7Iz9mcifp80a3lleKg/IiEXAkrZRGoEATBUGBLtBEAkTNJI/oxWJxsV6vL6uqup1Op3+IxsWumeTQIYSfADAEgGVVVVdWsZNCt9H8uxNey+12+242m92xC7nEHUoKjX1vmubGOfe+Mw6cPq7qul4mHhur2yeHLtj37zcJdMEmhLaOTRbR+wnT6pxNDm01srNAt9ifnHMLK9lINmgEDiF8AIDPXewY48R7/41VbvYCnckKfQIbfzyp6/rmBcbH5hbZoa1gs4C2gM0GWjs2K2jN2OygtWKzhG7z7DEA4Mrfq07qIDYbYQvdRvYwxvijix1jvPbeT9nkbU/sCGvoU9gY6XVdT544Rha/xh5aC7YIaA3YYqClY4uClowtDloqtkjoPTYA4HLq605awTYbEQuNuFg3slqtMM++7GCzLNQRDS0JWzy0FGwV0BKw1UBzx1YFzRlbHTRXbJXQHLHVQu/zai4laOqh229rstdom4DmgG0GOje2Keic2Oagj2HHGO+8929TfrloEjqEgBWsWMn6/xVjvPXe4xa9ZC9z0EeQ/zrnRql3iZmCzoWMfyZmoHMim4HOjaweut0i/RUARp0HH8mc/PCpqnbqaJG/txv+D9nFbrcb59iLrhL6FPJgMBjlOl1BHTRHZHVzNFdkVdCckdVAc0dWAS0BWTz0fD5/0+v1ME8+LAjhAlHO7OLUqpTYrCOEgLiYJ190Pox88d4fVuWSLcWdcWOR0NKQRU4dEpHFQUtFFgUtGVkMtHRkEdAakNlDa0FmDd2et4SHWx3yZMlHALHMo48caoVBIfZkA5YRrRGZHbRWZFbQmpHZQGtHZgFtATk7tBXkrNAhhI8AcJ27sOWMpeWzLsmSR3Mo0TpL6xkXkUNbRCafOqwik0JbRiaDto5MAl2Q75+gSR+GR/6F0y8AGKfeL/KM5CDZpUmhsddN0yzxzCOuhS3JZB/cODk0RvVmsxn2+/1lrtpkKszH2kkOzWGQHPpQoInehQJdoIkEiJopEU0E/Q8asnd5D6rzKwAAAABJRU5ErkJggg==');			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 18px;
+		}
+	</style>
+</head>
+<body>
+
+
+<header class="mui-bar mui-bar-nav aui-header b-line">
+	<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+	<h1 class="mui-title">消息通知</h1>
+	<a class="mui-icon mui-icon-paperplane mui-pull-right"></a>
+</header>
+<div class="mui-content">
+	<div class="aui-list-cells">
+		<a href="javascript:;" class="aui-list-cell aui-list-cell-s">
+			<div class="aui-list-cell-fl"><img src="images/icon/tz-1.png"></div>
+			<div class="aui-list-cell-cn">通知消息</div>
+			<div class="aui-list-cell-fr"></div>
+		</a>
+		<a href="javascript:;" class="aui-list-cell aui-list-cell-s">
+			<div class="aui-list-cell-fl"><img src="images/icon/tz-2.png"></div>
+			<div class="aui-list-cell-cn">互动消息</div>
+			<div class="aui-list-cell-fr"></div>
+		</a>
+		<a href="javascript:;" class="aui-list-cell aui-list-cell-s">
+			<div class="aui-list-cell-fl"><img src="images/icon/tz-3.png"></div>
+			<div class="aui-list-cell-cn">交易消息</div>
+			<div class="aui-list-cell-fr"></div>
+		</a>
+	</div>
+</div>
+
+
+
+<script src="js/mui.min.js"></script>
+
+
+
+</body>
+</html>

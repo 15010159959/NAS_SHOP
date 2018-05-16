@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+	<link rel="stylesheet" type="text/css" href="css/app.css"/>
+	<title>全部分类</title>
+</head>
+<body>
+
+
+
+<header class="mui-bar mui-bar-nav aui-header b-line">
+	<a class=" mui-icon mui-icon-search mui-pull-left"></a>
+	<h1 class="mui-title">分类</h1>
+	<a class=" mui-icon mui-icon-chatbubble mui-pull-right"></a>
+</header>
+<div class="mui-content">
+	<div class="aui-nav">
+		<h2 class="b-line">全部分类</h2>
+		<ul class="mui-table-view mui-grid-view mui-grid-9">
+			<li class="mui-table-view-cell mui-media mui-col-sm-3 b-line">
+				<a href="page_tshirt.html" class="b-line">
+					<span class="aui-cell-img"><img src="images/icon/nas.jpg" alt=""></span>
+					<div class="mui-media-body">体恤</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-sm-3 b-line">
+				<a href="page_ Sweater.html">
+					<span class="aui-cell-img"><img src="images/nas.jpg" alt=""></span>
+					<div class="mui-media-body">卫衣</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-sm-3 b-line">
+				<a href="page_jacket.html">
+					<span class="aui-cell-img"><img src="images/nas.jpg" alt=""></span>
+					<div class="mui-media-body">夹克</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-sm-3 b-line">
+				<a href="page_ badge.html">
+					<span class="aui-cell-img"><img src="images/nas.jpg" alt=""></span>
+					<div class="mui-media-body">徽章</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-sm-3 b-line">
+				<a href="page_ sticker.html">
+					<span class="aui-cell-img"><img src="images/nas.jpg" alt=""></span>
+					<div class="mui-media-body">贴纸</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-sm-3 b-line">
+				<a href="#">
+					<span class="aui-cell-img"><img src="images/nas.jpg" alt=""></span>
+					<div class="mui-media-body">周边</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-sm-3 b-line">
+				<a href="#">
+					<span class="aui-cell-img"><img src="images/nas.jpg" alt=""></span>
+					<div class="mui-media-body">自传</div>
+				</a>
+			</li>
+			
+		</ul>
+	</div>
+
+	<div class="devider "></div>
+	
+</div>
+
+
+<div style="height:50px"></div>
+<nav class="mui-bar mui-bar-tab">
+	<div class="t-line">
+		<a class="aui-tab-item" href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="aui-tab-item mui-active" href="category.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-class"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="aui-tab-item" href="car.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="aui-tab-item" href="me.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-people"></span>
+			<span class="mui-tab-label">我的</span>
+		</a>
+	</div>
+
+</nav>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    mui.init({
+        swipeBack:true //启用右滑关闭功能
+    });
+    var slider = mui("#slider");
+    document.getElementById("switch").addEventListener('toggle', function(e) {
+        if (e.detail.isActive) {
+            slider.slider({
+                interval: 5000
+            });
+        } else {
+            slider.slider({
+                interval: 0
+            });
+        }
+    });
+</script>
+<script>
+    mui.init();
+</script>
+
+
+</body>
+</html>

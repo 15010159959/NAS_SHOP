@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+	<link rel="stylesheet" type="text/css" href="css/app.css"/>
+	<title>购物就去海淘-购物车</title>
+	<link href="favicon.ico" type="image/x-icon" rel="icon">
+	<link href="iTunesArtwork@2x.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+</head>
+<body>
+
+
+
+<header class="mui-bar mui-bar-nav aui-header b-line">
+	<!--<a class="mui-action-back mui-icon mui-icon-search mui-pull-left"></a>-->
+	<h1 class="mui-title">购物车</h1>
+	<a class="mui-icon mui-icon-trash mui-pull-right"></a>
+</header>
+<div class="mui-content">
+	<div class="word" style="text-align: center;margin-top: 20px;">暂未开放</div>
+</div>
+
+
+<div style="height:50px"></div>
+
+<nav class="mui-bar mui-bar-tab">
+	<div class="t-line">
+		<a class="aui-tab-item" href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="aui-tab-item " href="category.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-class"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="aui-tab-item mui-active" href="car.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="aui-tab-item" href="me.html">
+			<span class="mui-icon mui-icon-extra mui-icon-extra-people"></span>
+			<span class="mui-tab-label">我的</span>
+		</a>
+	</div>
+
+</nav>
+<script src="js/mui.min.js"></script>
+<script>
+    mui.init();
+    (function($) {
+        //$.swipeoutOpen(el,direction)//打开指定列的滑动菜单，el:指定列的dom对象，direction：取值left|right，指定打开的是左侧或右侧滑动菜单
+        //$.swipeoutClose(el);//关闭指定列的滑动菜单，el:指定列的dom对象
+        //				setTimeout(function() {
+        //					$.swipeoutOpen(document.getElementById("OA_task_1").querySelector('li:last-child'), 'left');
+        //					setTimeout(function() {
+        //						$.swipeoutClose(document.getElementById("OA_task_1").querySelector('li:last-child'));
+        //					}, 1000);
+        //				}, 1000);
+        //第一个demo，拖拽后显示操作图标，点击操作图标删除元素；
+        $('#OA_task_1').on('tap', '.mui-btn', function(event) {
+            var elem = this;
+            var li = elem.parentNode.parentNode;
+            mui.confirm('确认删除该商品吗？', '删除商品', btnArray, function(e) {
+                if (e.index == 0) {
+                    li.parentNode.removeChild(li);
+                } else {
+                    setTimeout(function() {
+                        $.swipeoutClose(li);
+                    }, 0);
+                }
+            });
+        });
+        var btnArray = ['确认', '取消'];
+        //第二个demo，向左拖拽后显示操作图标，释放后自动触发的业务逻辑
+        $('#OA_task_2').on('slideleft', '.mui-table-view-cell', function(event) {
+            var elem = this;
+            mui.confirm('确认删除该商品吗？', '删除商品', btnArray, function(e) {
+                if (e.index == 0) {
+                    elem.parentNode.removeChild(elem);
+                } else {
+                    setTimeout(function() {
+                        $.swipeoutClose(elem);
+                    }, 0);
+                }
+            });
+        });
+        //第二个demo，向右拖拽后显示操作图标，释放后自动触发的业务逻辑
+        $('#OA_task_2').on('slideright', '.mui-table-view-cell', function(event) {
+            var elem = this;
+            mui.confirm('确认删除该商品吗？', '删除商品', btnArray, function(e) {
+                if (e.index == 0) {
+                    elem.parentNode.removeChild(elem);
+                } else {
+                    setTimeout(function() {
+                        $.swipeoutClose(elem);
+                    }, 0);
+                }
+            });
+        });
+    })(mui);
+</script>
+<script type="text/javascript" charset="utf-8">
+    mui.init({
+        swipeBack:true //启用右滑关闭功能
+    });
+    var slider = mui("#slider");
+    document.getElementById("switch").addEventListener('toggle', function(e) {
+        if (e.detail.isActive) {
+            slider.slider({
+                interval: 5000
+            });
+        } else {
+            slider.slider({
+                interval: 0
+            });
+        }
+    });
+</script>
+<script>
+    mui.init();
+</script>
+
+
+</body>
+</html>
