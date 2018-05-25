@@ -48,7 +48,7 @@ function funcIntervalQuery() {
             console.log("tx result: " + resp)   //resp is a JSON string
             var respObject = JSON.parse(resp)
             if(respObject.code === 0 && respObject.data.status === 1){
-                alert(`send new order succeed!`);
+                alert(`send new order succeed!\n` + JSON.stringify(respObject.data,null,''));
 
                 clearInterval(intervalQuery)
             }
@@ -60,5 +60,12 @@ function funcIntervalQuery() {
 
 function listener( resp) {
     console.log("response of newOrder: " + JSON.stringify(resp))
+    var respString = JSON.stringify(resp);
+    if(respString.search("rejected by user") !== -1){
+        clearInterval(intervalQuery)
+        alert(respString)
+    }else if(respString.search("txhash") !== -1){
+        alert("wait for tx result: " + resp.txhash)
+    }
 
 }
