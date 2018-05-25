@@ -58,9 +58,8 @@ function funcIntervalQuery() {
             console.log("tx result: " + resp)   //resp is a JSON string
             var respObject = JSON.parse(resp)
             if(respObject.code === 0 && respObject.data.status === 1){
+                clearInterval(intervalQuery);
                 alert(`send new order succeed!\n` + JSON.stringify(respObject.data,null,''));
-
-                clearInterval(intervalQuery)
             }
         })
         .catch(function (err) {

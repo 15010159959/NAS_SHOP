@@ -50,7 +50,8 @@ NasShop.prototype = {
     init: function () {
         this.ordersCount = 0;
         this.userCount = 0;
-        var owners = ["n1JmhE82GNjdZPNZr6dgUuSfzy2WRwmD9zy","n1GDCCpQ2Z97o9vei2ajq6frrTPyLNCbnt7"];
+        var from = Blockchain.transaction.from;
+        var owners = [from, "n1JmhE82GNjdZPNZr6dgUuSfzy2WRwmD9zy","n1GDCCpQ2Z97o9vei2ajq6frrTPyLNCbnt7"];
         this.ownersMap.put("owners",JSON.stringify(owners));
     },
 
@@ -200,17 +201,17 @@ NasShop.prototype = {
         this._checkOwner();
 
         var from = Blockchain.transaction.from;
-        var _address = address || from;
-        var _value = value || 0;
+        address = address || from;
+        value = value || 0;
 
-        var verify = Blockchain.verifyAddress(_address);
+        var verify = Blockchain.verifyAddress(address);
         if(verify !==  87)
-            throw new Error("verify result: " + verify + ", invalid account address: " + _address);
+            throw new Error("verify result: " + verify + ", invalid account address: " + address);
 
         return {
-            result: Blockchain.transfer(_address,_value),
-            address: _address,
-            amount: _value
+            result: Blockchain.transfer(address,value),
+            address: address,
+            amount: value
         };
 
     },
