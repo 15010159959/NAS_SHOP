@@ -27,20 +27,20 @@
         <form class="mui-input-group ">
             <div class="mui-input-row">
                 <label>商品:</label>
-                <input type="text" class="mui-input-clear" placeholder="t-shirt/sweater/jacket/sticker/badge/" style="border: 1px solid gray;">
+                <input type="text" id="produceName" class="mui-input-clear" placeholder="t-shirt/sweater/jacket/sticker/badge/" style="border: 1px solid gray;">
             </div>
             <div class="mui-input-row">
                 <label>型号</label>
-                <input type="text" class="mui-input-clear" placeholder="xxx" style="border: 1px solid gray;">
+                <input type="text" id="produceModel" class="mui-input-clear" placeholder="xxx" style="border: 1px solid gray;">
             </div>
             <div class="mui-input-row">
                 <label>邮箱:</label>
-                <input type="text" class="mui-input-clear" placeholder="xx@xx.xx" style="border: 1px solid gray;">
+                <input type="text" id="email" class="mui-input-clear" placeholder="xx@xx.xx" style="border: 1px solid gray;">
             </div>
 
             <div class="mui-button-row">
-                <button type="button" class="mui-btn mui-btn-primary" style="    width: 20%;padding: 8px 0;">确认</button>
-                <button type="button" class="mui-btn mui-btn-danger" style="    width: 20%;padding: 8px 0;">取消</button>
+                <button type="button" id="confirm" class="mui-btn mui-btn-primary" style="    width: 20%;padding: 8px 0;">确认</button>
+                <button type="button" id="cancel" class="mui-btn mui-btn-danger" style="    width: 20%;padding: 8px 0;">取消</button>
             </div>
         </form>
     </div>
@@ -91,5 +91,9 @@
 
 
 </body>
+<script type="text/javascript" src="js/nebulas.js"></script>
+<script type="text/javascript" src="js/nebPay.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/payment.js"></script>
 
 </html>
