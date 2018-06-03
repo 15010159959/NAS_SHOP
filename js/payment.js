@@ -36,7 +36,8 @@ $("#confirm").click(function () {
     var callArgsObj = {
         productName : $("#produceName").val(),
         productModel : $("#produceModel").val(),
-        email : $("#email").val()
+        email : $("#email").val(),
+        beefToken: value,
     }
     var callArgs = JSON.stringify([JSON.stringify(callArgsObj)]);
     serialNumber = nebPay.call(to, value, callFunction, callArgs, {
