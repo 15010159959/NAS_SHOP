@@ -1,30 +1,5 @@
 "use strict";
 
-var OrderItem = function(text) {
-    if (text) {
-        var obj = JSON.parse(text);
-        this.index = obj.index;
-        this.from = obj.from;
-        this.productName = obj.productName;
-        this.productModel = obj.productModel;
-        this.value = obj.value;
-        this.email = obj.email;
-    } else {
-        this.index = "";
-        this.from = "";
-        this.productName = "";
-        this.productModel = "";
-        this.value = "";
-        this.email = "";
-    }
-};
-
-OrderItem.prototype = {
-    toString: function () {
-        return JSON.stringify(this);
-    }
-};
-
 var NasShop = function () {
 
     LocalContractStorage.defineProperties(this, {
@@ -79,10 +54,11 @@ NasShop.prototype = {
         userOrderNumber ++;
         this.userOrderCount.put(from, userOrderNumber);
 
-        var orderItem = new OrderItem();
+        var orderItem = {};
         orderItem.index = userOrderNumber;
         orderItem.from = from;
         orderItem.value = value;
+        orderItem.beefToken = value;
         orderItem.productName = orderInfo.productName;
         orderItem.productModel = orderInfo.productModel;
         orderItem.email = orderInfo.email;
@@ -98,6 +74,10 @@ NasShop.prototype = {
             "UserOrderCounts": userOrderNumber,
             "OrderItems": orderItem
         }
+    },
+
+    newShop: function(){
+
     },
 
     getOrderCount : function(){
