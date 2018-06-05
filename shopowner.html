@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
     <link rel="stylesheet" type="text/css" href="css/app.css" />
-    <title>支付</title>
+    <title>合约开店</title>
 </head>
 
 <body>
@@ -19,28 +19,42 @@
 
     <header class="mui-bar mui-bar-nav aui-header b-line">
         <a class=" mui-icon mui-icon-search mui-pull-left"></a>
-        <h1 class="mui-title">支付</h1>
+        <h1 class="mui-title">合约开店</h1>
         <a class=" mui-icon mui-icon-chatbubble mui-pull-right"></a>
     </header>
     <div class="mui-content">
-        <h5>为保护用户隐私，在加密功能开发完成前，采用线下邮箱信息验证购买模式。加密功能上线后，恢复正常购买流程。</h5>
+            <br>
+            <br>
+        <h5>为保证合约店家的靠谱性，采用智能合约认证模式。
+            <br>
+            认证流程：<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;1>基本信息认证----智能合约；
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;2>高级认证----邮箱合同认证；
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;3>认证成功----开店合约以只能合约的形式上链公示；
+            <br>
+            为保护用户隐私，在加密功能开发完成前，采用线下邮箱信息高级验证模式（我们会在第一时间回复）。加密功能上线后，恢复正常线上开店流程。</h5>
+            <br>
+            <br>
         <form class="mui-input-group ">
             <div class="mui-input-row">
-                <label>商品:</label>
-                <input type="text" id="produceName" class="mui-input-clear" placeholder="t-shirt/sweater/jacket/sticker/badge/" style="border: 1px solid gray;">
+                <label>商店名称:</label>
+                <input type="text" id="shopname" class="mui-input-clear" placeholder="星云go！。。。" style="border: 1px solid gray;">
             </div>
             <div class="mui-input-row">
-                <label>型号</label>
-                <input type="text" id="produceModel" class="mui-input-clear" placeholder="xxx" style="border: 1px solid gray;">
+                <label>商店描述</label>
+                <input type="text" id="shopbanner" class="mui-input-clear" placeholder="商店类型/销售的东西品类" style="border: 1px solid gray;">
             </div>
             <div class="mui-input-row">
                 <label>邮箱:</label>
-                <input type="text" id="email" class="mui-input-clear" placeholder="xx@xx.xx" style="border: 1px solid gray;">
+                <input type="text" id="shopemail" class="mui-input-clear" placeholder="xx@xx.xx" style="border: 1px solid gray;">
             </div>
+            
 
             <div class="mui-button-row">
-                <button type="button" id="confirm" class="mui-btn mui-btn-primary" style="    width: 20%;padding: 8px 0;">确认</button>
-                <button type="button" id="cancel" class="mui-btn mui-btn-danger" style="    width: 20%;padding: 8px 0;">取消</button>
+                <button type="button" id="confirm_shop" class="mui-btn mui-btn-primary" style="    width: 20%;padding: 8px 0;">确认</button>
+                <button type="button" id="cancel_shop" class="mui-btn mui-btn-danger" style="    width: 20%;padding: 8px 0;">取消</button>
             </div>
         </form>
     </div>
