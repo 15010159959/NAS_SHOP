@@ -4,6 +4,7 @@ var NasShop = function () {
 
     LocalContractStorage.defineProperties(this, {
         ordersCount:0,
+        shopCount:0,
         userCount:0
     });
     // LocalContractStorage.defineMapProperty(this, "ordersMap", {
@@ -19,6 +20,7 @@ var NasShop = function () {
     LocalContractStorage.defineMapProperty(this, "orderIndex", {});
     LocalContractStorage.defineMapProperty(this, "userOrderCount", {});
     LocalContractStorage.defineMapProperty(this, "ordersMap", {});
+    LocalContractStorage.defineMapProperty(this, "shopMap", {});
 };
 
 NasShop.prototype = {
@@ -76,14 +78,54 @@ NasShop.prototype = {
         }
     },
 
-    newShop: function(){
+    newShop: function(shopInfo){
+        shopInfo = JSON.parse(shopInfo);
 
+        if ( shopInfo.name === "" ||  shopInfo.name === undefined)
+            throw new Error("shopInfo missing shop name");
+        if ( shopInfo.email === "" ||  shopInfo.email === undefined)
+            throw new Error("shopInfo missing email");
+        if ( shopInfo.banner === "" ||  shopInfo.banner === undefined)
+            throw new Error("shopInfo missing banner");
+
+        var from = Blockchain.transaction.from;
+        //var value = Blockchain.transaction.value;
+
+
+        var userSHop = this.shopMap.get(from);      //One account can only create one shop, and can update it's info
+        if(!userSHop){
+            this.shopCount ++;
+            userSHop = {};
+            userSHop.Id = this.shopCount;
+        }
+        shopInfo.Id = userSHop.Id;
+
+        this.shopMap.put(from,shopInfo);
+
+        return {
+            shopCount: this.shopCount,
+            shopInfo: shopInfo
+        }
     },
 
+    //get the total number of orders
     getOrderCount : function(){
         return this.ordersCount;
     },
 
+    //get the total number of shops
+    getShopCount : function(){
+        return this.shopCount;
+    },
+
+    //get shop info of the owner
+    getShopInfo : function(owner){
+        owner = owner || Blockchain.transaction.from;
+
+        return this.shopMap.get(owner);
+    },
+
+    //get the total orders number of a user
     getUserOrderCount: function(user){
         user = user || Blockchain.transaction.from;
         return this.userOrderCount.get(user) || 0;
@@ -132,6 +174,7 @@ NasShop.prototype = {
         return result;
     },
 
+    //check if the tx "from" is an owner of this contract
     _checkOwner : function(){
         var from = Blockchain.transaction.from;
         var owners = JSON.parse(this.ownersMap.get("owners"));
