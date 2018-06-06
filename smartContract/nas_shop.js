@@ -54,7 +54,7 @@ NasShop.prototype = {
         this.ordersCount = 0;
         this.userCount = 0;
         var from = Blockchain.transaction.from;
-        var owners = [from, "n1JmhE82GNjdZPNZr6dgUuSfzy2WRwmD9zy", "n1GDCCpQ2Z97o9vei2ajq6frrTPyLNCbnt7"];
+        var owners = [from];
         this.ownersMap.put("owners", JSON.stringify(owners));
 
         this._owner = from;
