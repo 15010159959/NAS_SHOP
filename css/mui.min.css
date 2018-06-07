@@ -1070,7 +1070,8 @@ p {
 	width:45%;
 	color: #fff;
 	border: 1px solid #FF3366;
-	background-color: #FF3366
+	background-color: #FF3366;
+	border-radius: 18px;
 }
 
 .mui-btn-blue.mui-active:enabled,.mui-btn-blue:enabled:active,.mui-btn-primary.mui-active:enabled,.mui-btn-primary:enabled:active,input[type=submit].mui-active:enabled,input[type=submit]:enabled:active {
@@ -1106,7 +1107,8 @@ p {
 .mui-btn-danger,.mui-btn-negative,.mui-btn-red {
 	color: #fff;
 	border: 1px solid #dd524d;
-	background-color: #dd524d
+	background-color: #dd524d;
+	border-radius: 18px;
 }
 
 .mui-btn-danger.mui-active:enabled,.mui-btn-danger:enabled:active,.mui-btn-negative.mui-active:enabled,.mui-btn-negative:enabled:active,.mui-btn-red.mui-active:enabled,.mui-btn-red:enabled:active {
@@ -2429,7 +2431,8 @@ select:focus {
 	width: 65%;
 	margin-bottom: 0;
 	padding-left: 0;
-	border: 0
+	border: 0;
+	border-radius: 18px;
 }
 
 .mui-input-row .mui-btn {
