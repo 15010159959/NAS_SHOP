@@ -33,7 +33,7 @@ $(getUserAddress);
 
 $("#confirm").click(function () {
     var to = dappAddress;
-    var value = "0.00000001";    //NAS
+    var value = "1";    //NAS
     var callFunction = "newOrder";
     var callArgsObj = {
         productName : $("#produceName").val(),
